@@ -27,7 +27,7 @@ const videoConstraints = {
             <img src={imgSrc} alt="webcam" style={{paddingTop: '44px', width: '350px'}} />
         </div>  
       ) : (
-        <Webcam height={350} width={350} ref={webcamRef}  />
+        <Webcam videoConstraints={videoConstraints} height={350} width={350} ref={webcamRef}  />
       )}
       <div className="btn-container">
         {/* <div onClick={retake} className="more">+</div> */}
