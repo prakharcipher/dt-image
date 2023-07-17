@@ -1,0 +1,568 @@
+.App {
+  height: 100vh;
+  color: #01371D;
+
+  .header {
+    text-align: center;
+    img {
+      margin-top: 12px;
+    }
+  }
+
+  .name-comp {
+    
+  
+    .avatar {
+      text-align: center;
+      img {
+        margin-top: 70px;
+        opacity: 0.7;
+      }
+    }
+  
+    .name {
+      text-align: center;
+      margin-top: 50px;
+      input {
+        width: 60%;
+        padding: 10px 8px;
+        border-radius: 8px;
+        border: none;
+      }
+    }
+  
+    .btn-cta {
+      text-align: center;
+      margin-top: 25px;
+      
+  
+      button {
+        padding: 6px 20px;
+        font-size: 20px;
+        background-color: #01371D;
+        border: none;
+        color: #CCEE24;
+        font-weight: 600;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .home-comp {
+    text-align: center;
+    .plus {
+      img {
+        margin-top: 40%;
+      }
+    }
+
+    .label-text {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+  .webcam {
+    text-align: center;
+  }
+
+  .crop-container {
+    .label {
+      text-align: center;
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 100px;
+      margin-top: 50px;
+    }
+
+    .crop {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      
+    }
+
+    .crop1 {
+      padding: 12px;
+      width: 200px;
+      border: 1px solid orange;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .crop2 {
+      padding: 12px;
+      width: 200px;
+      border: 1px solid orange;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .crop3 {
+      padding: 12px;
+      width: 200px;
+      border: 1px solid orange;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .highlight {
+      padding: 12px;
+      width: 200px;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #CCEE24;
+      border: 1px solid orange;
+      font-weight: 600;
+      font-size: 18px
+    }
+
+    .next-cta {
+      text-align: center;
+      margin-top: 80px;
+      
+  
+      button {
+        padding: 6px 20px;
+        font-size: 20px;
+        background-color: #01371D;
+        border: none;
+        color: #CCEE24;
+        font-weight: 600;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .problem-container {
+    .label {
+      text-align: center;
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 30px;
+      margin-top: 35px;
+    }
+
+    .tabs-container {
+      display: flex;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+
+      .tabs {
+        display: flex;
+        width: 80%;
+        justify-content: space-around;
+
+        div {
+          border: 1px solid black;
+          width: 33.333%;
+          padding: 4px 8px;
+        }
+
+        .pests {
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+
+          .highlight {
+            background-color: #01371D;
+            color: white;
+            font-weight: bold;
+          }
+        }
+
+        .deficiency {
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+
+          .highlight {
+            background-color: #01371D;
+            color: white;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .highlight {
+        background-color: #01371D;
+        color: white;
+        font-weight: bold;
+      }
+    }
+
+    .problems {
+      .pests {
+        display: flex;
+        justify-content: center;
+        .pest {
+            margin-top: 30px;
+        }
+
+        .pest1 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .pest2 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .pest3 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .pest4 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .pest5 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          text-align: center;
+          font-weight: 500;
+          margin-top: 16px;
+          font-size: 18px;
+        }
+
+        .highlight {
+          padding: 12px;
+          width: 200px;
+          text-align: center;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          background-color: #CCEE24;
+          border: 1px solid orange;
+          font-weight: 600;
+          font-size: 18px
+        }
+
+        .custom-pest {
+          input {
+            width: 200px;
+            font-size: 18px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 16px;
+            background-color: transparent;
+            border: 1px solid orange;
+          }
+        }
+      }
+
+      .diseases {
+        display: flex;
+        justify-content: center;
+        .disease {
+            margin-top: 30px;
+        }
+
+        .disease1 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .disease2 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .disease3 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .disease4 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .disease5 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          text-align: center;
+          font-weight: 500;
+          margin-top: 16px;
+          font-size: 18px;
+        }
+
+        .highlight {
+          padding: 12px;
+          width: 200px;
+          text-align: center;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          background-color: #CCEE24;
+          border: 1px solid orange;
+          font-weight: 600;
+          font-size: 18px
+        }
+
+        .custom-disease {
+          input {
+            width: 200px;
+            font-size: 18px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 16px;
+            background-color: transparent;
+            border: 1px solid orange;
+          }
+        }
+      }
+
+      .deficiencies {
+        display: flex;
+        justify-content: center;
+        .deficiency {
+            margin-top: 30px;
+        }
+
+        .deficiency1 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .deficiency2 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .deficiency3 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .deficiency4 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        .deficiency5 {
+          padding: 12px;
+          width: 200px;
+          border: 1px solid orange;
+          border-radius: 8px;
+          cursor: pointer;
+          text-align: center;
+          font-weight: 500;
+          margin-top: 16px;
+          font-size: 18px;
+        }
+
+        .highlight {
+          padding: 12px;
+          width: 200px;
+          text-align: center;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 16px;
+          background-color: #CCEE24;
+          border: 1px solid orange;
+          font-weight: 600;
+          font-size: 18px
+        }
+
+        .custom-deficiency {
+          input {
+            width: 200px;
+            font-size: 18px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 16px;
+            background-color: transparent;
+            border: 1px solid orange;
+          }
+        }
+      }
+
+      .next-cta {
+        text-align: center;
+        margin-top: 40px;
+        
+    
+        button {
+          padding: 6px 20px;
+          font-size: 20px;
+          background-color: #01371D;
+          border: none;
+          color: #CCEE24;
+          font-weight: 600;
+          border-radius: 8px;
+        }
+      }      
+    }
+  }
+
+  .upload-loader {
+    .loader {
+      text-align: center;
+      margin-top: 40%;
+
+      .label {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .success-container {
+    .success {
+      text-align: center;
+
+      img {
+        margin-top: 40%;
+      }
+
+      .label {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
