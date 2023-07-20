@@ -6,9 +6,11 @@ const CustomWebcam = (props) => {
 
 const webcamRef = useRef(null);
 const [imgSrc, setImgSrc] = useState(null);
+const [images, setImages] = useState([]);
 
 const capture = useCallback(() => {
-    const imageSrc = webcamRef.current.getScreenshot();
+    const imageSrc = webcamRef.current.getScreenshot();    
+    setImages(prevImages => [...prevImages, imageSrc]);
     setImgSrc(imageSrc);
   }, [webcamRef]);
 
@@ -20,21 +22,21 @@ const videoConstraints = {
     facingMode: { exact: "environment" }
 };
 
+
+
   return (
     <div className="container">
       {imgSrc ? (
-        <div style={{height: '354px', width: '350px', textAlign: 'center'}}>
-            <img src={imgSrc} height="320" width="220" alt="webcam" style={{paddingTop: '12px', width: '350px'}} />
-        </div>  
+            <img src={imgSrc} height="320" width="320" alt="webcam" />
       ) : (
         <Webcam videoConstraints={videoConstraints} height={350} width={350} ref={webcamRef}  />
       )}
       <div className="btn-container">
-        {/* <div onClick={retake} className="more">+</div> */}
-        <div onClick={imgSrc ? retake : capture} className="click">&#128247;</div>
+        {images.length < 10 && <div onClick={imgSrc ? retake : capture} className="click">&#128247;</div>}
       </div>
+      <div style={{marginTop: '16px'}}>{`${10-images.length} clicks left`}</div>
       <div className="done-btn">
-        <button onClick={props.handlePhoto}>selesai</button>
+        <button onClick={() => props.handlePhoto(images)}>selesai</button>
       </div>
     </div>
   );
