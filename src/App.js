@@ -139,10 +139,21 @@ function App() {
 
     setFormData(data);
 
-    const reqBody = { ...data };
-    reqBody['agronomist_email'] = localStorage.getItem('agroName');
+    const formBody = new FormData();
+    formBody.append('crop_name', data.crop_name);
+    formBody.append('agronomist_email', localStorage.getItem('agroName'));
+    data.pests.forEach((pest, index) => {
+      formBody.append(`pests[]`, pest);
+    });
+    data.crop_images.forEach((blob, index) => {
+        formBody.append(`crop_images`, blob, `image_${index}.jpg`);
+    });
 
-    axios.post('https://dev-api.dayatani.id/agronomist/api/crop-images', reqBody)
+    axios.post('https://dev-api.dayatani.id/agronomist/api/crop-images', formBody, {
+      headers: {
+          'Content-Type': 'multipart/form-data', // Important for formData
+      }
+    })
     .then((res) => {
       console.log("Response = ", res);
     })
