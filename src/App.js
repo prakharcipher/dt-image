@@ -46,6 +46,17 @@ function App() {
     setPest(pestCopy);
   }
 
+  function removeImage(image) {
+    const cropImagesCopy = [ ...formData['crop_images'] ];
+    const index = cropImagesCopy.indexOf(image);
+    if(index > -1) {
+      cropImagesCopy.splice(index, 1);
+    }
+    const formDataCopy = { ...formData };
+    formDataCopy['crop_images'] = cropImagesCopy;
+    setFormData(formDataCopy);
+  }
+
   function highlightDisease(disease) {
     const diseaseCopy = [...selectedDisease];
     const index = diseaseCopy.indexOf(disease);
@@ -150,10 +161,10 @@ function App() {
   }
 
   function handlePhoto(images) {
-    setShow('crop');
     const data = { ...formData };
     data['crop_images'] = images;
     setFormData(data);
+    setShow('review');
   }
 
   function handleCrop(crop) {
@@ -203,6 +214,25 @@ function App() {
 
       {show === 'webcam' && <div className='webcam'>
         <CustomWebcam handlePhoto={handlePhoto} />
+      </div>}
+
+      {show === 'review' && <div className='review'>
+        <div className='label' style={{fontWeight: '600', fontSize: '20px', marginTop: '20px', textAlign: 'center'}}>Review Images</div>
+        <div>
+          {formData['crop_images'].map((image) => {
+            return (
+              <div key={image} style={{textAlign: 'center'}}>
+                <img alt="preview" src={image} height="350" width="auto" style={{marginTop: '16px'}} />
+                <div>
+                  <button onClick={() => removeImage(image)} style={{width: '200px', padding: '8px', backgroundColor: 'red', color: 'white', borderRadius: '8px', border: 'none', fontSize: '18px'}}>Remove X</button>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+        <div className='next-cta'>
+          <button onClick={() => setShow('crop')}>selanjutnya</button>
+        </div>
       </div>}
 
       {show === 'crop' && <div className='crop-container'>
