@@ -27,7 +27,7 @@ const videoConstraints = {
   return (
     <div className="container">
       {imgSrc ? (
-            <img src={imgSrc} height="320" width="320" alt="webcam" />
+            <img src={imgSrc} height="320" width="auto" alt="webcam" />
       ) : (
         <Webcam videoConstraints={videoConstraints} height={350} width={350} ref={webcamRef}  />
       )}

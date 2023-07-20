@@ -113,5 +113,27 @@ export const cropData = {
             'Magnesium',
             'Iron'
         ]
+    },
+    tomato: {
+        pests: [
+            'Fruit Fly',
+            'Fall armyworm',
+            'Thrips',
+            'Aphids'
+        ],
+        diseases: [
+            'Anthracnose',
+            'Gemini Virus',
+            'Brown Spot',
+            'Busuk Lunak',
+            'Layu bibit/Dumping off'
+        ],
+        deficiencies: [
+            'Nitrogen',
+            'Phosphorus',
+            'Potassium',
+            'Calcium',
+            'Magnesium'
+        ]
     }
 }
