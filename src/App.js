@@ -139,6 +139,8 @@ function App() {
 
     setFormData(data);
 
+    setShow('loader');
+
     const formBody = new FormData();
     formBody.append('crop_name', data.crop_name);
     formBody.append('agronomist_email', localStorage.getItem('agroName'));
@@ -155,13 +157,9 @@ function App() {
       }
     })
     .then((res) => {
+      handleSuccess();
       console.log("Response = ", res);
     })
-
-    setShow('loader');
-    // setTimeout(() => {
-    //   handleSuccess();
-    // }, 3000);
   }
 
   function handleSuccess() {
@@ -197,7 +195,40 @@ function App() {
     setCustomDeficiency(e.target.value);
   }
 
-  console.log("Form Data = ", cropData)
+  function dataURItoBlob(dataURI) {
+    if(!dataURI){
+      return;
+    }
+    
+    var byteString;
+    if (dataURI.split(',')[0].indexOf('base64') >= 0)
+        byteString = atob(dataURI.split(',')[1]);
+    else
+        byteString = unescape(dataURI.split(',')[1]);
+  
+    // separate out the mime component
+    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+  
+    // write the bytes of the string to a typed array
+    var ia = new Uint8Array(byteString.length);
+    for (var i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+  
+    return new Blob([ia], {type:mimeString});
+  }
+
+  function handleShowCrop() {
+    const imagesCopy = [ ...formData['crop_images'] ];
+    const blobImages = [];
+    imagesCopy.forEach((image) => {
+      blobImages.push(dataURItoBlob(image));
+    })
+    const formDataCopy = { ...formData };
+    formDataCopy['crop_images'] = blobImages;
+    setFormData(formDataCopy);
+    setShow('crop');
+  }
 
   return (
     <div className="App">
@@ -228,7 +259,7 @@ function App() {
       </div>}
 
       {show === 'review' && <div className='review'>
-        <div className='label' style={{fontWeight: '600', fontSize: '20px', marginTop: '20px', textAlign: 'center'}}>Review Images</div>
+        <div className='label' style={{fontWeight: '600', fontSize: '20px', marginTop: '20px', textAlign: 'center'}}>Ulasan gambar</div>
         <div>
           {formData['crop_images'].map((image) => {
             return (
@@ -242,7 +273,7 @@ function App() {
           })}
         </div>
         <div className='next-cta'>
-          <button onClick={() => setShow('crop')}>selanjutnya</button>
+          <button onClick={handleShowCrop}>selanjutnya</button>
         </div>
       </div>}
 
