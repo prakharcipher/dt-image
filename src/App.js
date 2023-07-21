@@ -27,6 +27,18 @@ function App() {
     setCrop(crop);
   }
 
+  function resetStates() {
+    setCrop('');
+    setPest([]);
+    setDisease([]);
+    setDeficiency([]);
+    setProblem('pests');
+    setFormData({});
+    setCustomPest('');
+    setCustomDisease('');
+    setCustomDeficiency('');
+  }
+
   useEffect(() => {
     if(localStorage.getItem('agroName') && localStorage.getItem('agroName') !== '') {
       setShow('home')
@@ -147,6 +159,12 @@ function App() {
     data.pests.forEach((pest, index) => {
       formBody.append(`pests[]`, pest);
     });
+    data.diseases.forEach((disease, index) => {
+      formBody.append(`diseases[]`, disease);
+    });
+    data.deficiencies.forEach((deficiency, index) => {
+      formBody.append(`deficiencies[]`, deficiency);
+    });
     data.crop_images.forEach((blob, index) => {
         formBody.append(`crop_images`, blob, `image_${index}.jpg`);
     });
@@ -158,6 +176,7 @@ function App() {
     })
     .then((res) => {
       handleSuccess();
+      resetStates();
       console.log("Response = ", res);
     })
   }
@@ -229,6 +248,7 @@ function App() {
     setFormData(formDataCopy);
     setShow('crop');
   }
+
 
   return (
     <div className="App">
