@@ -121,7 +121,7 @@ function App() {
   function handleLoader() {
     const data = { ...formData };
 
-    if(selectedPest.length > 0) {
+    if(selectedPest.length > 0 || customPest) {
       data['pests'] = selectedPest;
       if(customPest) {
         data['pests'].push(customPest);
@@ -130,7 +130,7 @@ function App() {
       data['deficiencies'] = [];
     }
 
-    if(selectedDisease.length > 0) {
+    if(selectedDisease.length > 0 || customDisease) {
       data['diseases'] = selectedDisease;
       if(customDisease) {
         data['diseases'].push(customDisease);
@@ -139,7 +139,7 @@ function App() {
       data['deficiencies'] = [];
     }
     
-    if(selectedDeficiency.length > 0) {
+    if(selectedDeficiency.length > 0 || customDeficiency) {
       data['deficiencies'] = selectedDeficiency;
       if(customDeficiency) {
         data['deficiencies'].push(customDeficiency);
@@ -286,7 +286,7 @@ function App() {
               <div key={image} style={{textAlign: 'center'}}>
                 <img alt="preview" src={image} height="350" width="auto" style={{marginTop: '16px'}} />
                 <div>
-                  <button onClick={() => removeImage(image)} style={{width: '200px', padding: '8px', backgroundColor: 'red', color: 'white', borderRadius: '8px', border: 'none', fontSize: '18px'}}>Remove X</button>
+                  {formData['crop_images'].length > 1 && <button onClick={() => removeImage(image)} style={{width: '200px', padding: '8px', backgroundColor: 'red', color: 'white', borderRadius: '8px', border: 'none', fontSize: '18px'}}>Remove X</button>}
                 </div>
               </div>
             )
