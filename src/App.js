@@ -260,7 +260,7 @@ function App() {
           <img src={avatar} alt="avatar" width="180px" />
         </div>
         <div className='name'>
-          <input placeholder="Masukkan nama Anda" onChange={handleChange} />
+          <input placeholder="Masukkan Email Anda" onChange={handleChange} />
         </div>
         <div className='btn-cta'>
           <button onClick={handleName}>mulai</button>
